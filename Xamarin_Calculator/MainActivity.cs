@@ -3,6 +3,8 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
+using System;
+using Android.Util;
 
 namespace Xamarin_Calculator
 {
@@ -41,6 +43,56 @@ namespace Xamarin_Calculator
             btnDivide.Click += onBtnDivide_Click;
         }
 
-    }
+        private void onBtnDivide_Click(object sender, EventArgs e)
+        {
+            Num1 = Convert.ToDouble(txtNum1.Text);
+            Num2 = Convert.ToDouble(txtNum2.Text);
+            Result = Num1 / Num2;
+            string result = (Num1 + " / " + Num2 + " = " + Result).ToString();
+            string tag = "Divide";
+            Log.Info(tag, Num1.ToString());
+            Log.Info(tag, Num2.ToString());
+            Log.Info(tag, result);
+            Toast.MakeText(this, "The Result is " + Result, ToastLength.Long).Show();
+        }
+
+        private void onBtnMinus_Click(object sender, EventArgs e)
+        {
+            Num1 = Convert.ToDouble(txtNum1.Text);
+            Num2 = Convert.ToDouble(txtNum2.Text);
+            Result = Num1 - Num2;
+            string result = (Num1 + " - " + Num2 + " = " + Result).ToString();
+            string tag = "Subtract";
+            Log.Info(tag, Num1.ToString());
+            Log.Info(tag, Num2.ToString());
+            Log.Info(tag, result);
+            Toast.MakeText(this, "The Result is " + Result, ToastLength.Long).Show();
+        }
+
+        private void onBtnMul_Click(object sender, EventArgs e)
+        {
+            Num1 = Convert.ToDouble(txtNum1.Text);
+            Num2 = Convert.ToDouble(txtNum2.Text);
+            Result = Num1 * Num2;
+            string result = (Num1 + " * " + Num2 + " = " + Result).ToString();
+            string tag = "Multiply";
+            Log.Info(tag, Num1.ToString());
+            Log.Info(tag, Num2.ToString());
+            Log.Info(tag, result);
+            Toast.MakeText(this, "The Result is " + Result, ToastLength.Long).Show();
+        }
+
+        private void onBtnPlus_Click(object sender, EventArgs e)
+        {
+            Num1 = Convert.ToDouble(txtNum1.Text);
+            Num2 = Convert.ToDouble(txtNum2.Text);
+            Result = Num1 + Num2;
+            string result = (Num1 + " + " + Num2 + " = " + Result).ToString();
+            string tag = "Addition";
+            Log.Info(tag, Num1.ToString());
+            Log.Info(tag, Num2.ToString());
+            Log.Info(tag, result);
+            Toast.MakeText(this, "The Result is " + Result, ToastLength.Long).Show();
+        }
     }
 }
