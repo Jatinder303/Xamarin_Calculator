@@ -35,7 +35,6 @@ android:text="/"
 android:layout_x="231dp"
 android:layout_y="290dp" />
 <EditText
-Page 12
 android:id="@+id/txtNum1"
 android:layout_width="192dp"
 android:layout_height="wrap_content"
